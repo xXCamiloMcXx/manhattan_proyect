@@ -1,0 +1,262 @@
+/* --- Variables CSS Globales --- */
+/* Define una paleta de colores, fuentes y espaciados para mantener la consistencia. */
+:root {
+    --color-bg: #ffffff;
+    --color-text: #374151;
+    --color-text-muted: #6b7280;
+    --color-primary: #111827;
+    --color-accent: #2563eb;
+    --color-accent-hover: #1e40af;
+    --color-card-bg: #f9fafb;
+    --spacing-lg: 4rem;
+    --spacing-md: 2rem;
+    --shadow-light: 0 2px 6px rgba(0,0,0,0.07);
+    --border-radius: 0.75rem;
+    font-family: 'Poppins', sans-serif; /* Fuente principal para toda la página */
+    scroll-behavior: smooth; /* Desplazamiento suave entre secciones */
+  }
+  
+  /* --- Estilos Base --- */
+  * {
+    box-sizing: border-box; /* Asegura que padding y border no afecten el tamaño final del elemento. */
+  }
+  
+  body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  
+  a {
+    color: var(--color-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover,
+  a:focus {
+    color: var(--color-accent-hover);
+    outline: none;
+  }
+  
+  /* --- Encabezado y Navegación --- */
+  header {
+    position: sticky; /* Fija el encabezado en la parte superior al hacer scroll. */
+    top: 0;
+    background: var(--color-bg);
+    box-shadow: 0 1px 8px rgb(0 0 0 / 0.05);
+    z-index: 1000;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+  }
+  
+  .logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    user-select: none;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.25rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+  
+  nav a.nav-link {
+    font-weight: 600;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    color: var(--color-primary);
+    cursor: pointer;
+    display: inline-block;
+  }
+  /* Estilo para el enlace activo o al pasar el cursor sobre él. */
+  nav a.nav-link.active,
+  nav a.nav-link:hover {
+    background-color: var(--color-accent);
+    color: white;
+  }
+  
+  /* --- Contenido Principal y Secciones --- */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) 1rem 8rem 1rem;
+  }
+  
+  /* Por defecto, todas las secciones están ocultas. */
+  section {
+    display: none;
+  }
+  
+  /* La clase 'active' hace visible una sección. */
+  section.active {
+    display: block;
+  }
+  
+  /* --- Estilos de la Sección Hero (Inicio) --- */
+  .hero {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+    padding: 3rem 1rem 4rem;
+    border-radius: var(--border-radius);
+    background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+    box-shadow: var(--shadow-light);
+  }
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+    color: var(--color-primary);
+  }
+  .hero p {
+    font-size: 1.25rem;
+    color: var(--color-text-muted);
+    margin: 0 0 1.5rem;
+  }
+  .hero button {
+    background-color: var(--color-primary);
+    color: white;
+    font-weight: 600;
+    font-size: 1.125rem;
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.75rem 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .hero button:hover,
+  .hero button:focus {
+    background-color: var(--color-accent-hover);
+    outline: none;
+  }
+  
+  /* --- Tablero de Anuncios --- */
+  .announcements {
+    background: var(--color-card-bg);
+    box-shadow: var(--shadow-light);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    margin-bottom: var(--spacing-lg);
+  }
+  .announcements h2 {
+    font-weight: 700;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+  }
+  .announcement-item {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    border-left: 4px solid var(--color-accent);
+  }
+  .announcement-item:last-child {
+    margin-bottom: 0;
+  }
+  
+  /* --- Estilos Comunes para Formularios --- */
+  form {
+    max-width: 480px;
+    margin: 0 auto;
+    background: var(--color-card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+  }
+  form h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+    text-align: center;
+  }
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+  /* Estilos para campos de texto, email, password, etc. */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 0.625rem 0.75rem;
+    margin-bottom: 1.25rem;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    transition: border-color 0.3s ease;
+    font-family: inherit;
+    resize: vertical; /* Permite redimensionar verticalmente los textarea. */
+  }
+  /* Efecto de foco para los campos de entrada. */
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="number"]:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+  }
+  
+  /* Estilo para los botones de envío y compra. */
+  button[type="submit"], button.buy-btn {
+    width: 100%;
+    background-color: var(--color-accent);
+    color: white;
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button[type="submit"]:hover,
+  button.buy-btn:hover,
+  button[type="submit"]:focus,
+  button.buy-btn:focus {
+    background-color: var(--color-accent-hover);
+    outline: none;
+  }
+  
+  /* --- Pie de Página --- */
+  footer {
+    background: var(--color-card-bg);
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  /* --- Diseño Responsivo (Media Queries) --- */
+  /* Ajusta los estilos para pantallas más grandes (ancho mínimo de 600px). */
+  @media (min-width: 600px) {
+    form {
+      padding: 2.5rem; /* Aumenta el padding en formularios. */
+    }
+    .hero h1 {
+      font-size: 4rem; /* Aumenta el tamaño del título principal. */
+    }
+  }
