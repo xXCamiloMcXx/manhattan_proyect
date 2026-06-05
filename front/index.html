@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    🎫Ticket Flow
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="nav-container">
+
+      <!-- LOGO -->
+      <a
+        href="#"
+        class="logo nav-link active"
+        data-target="home"
+      >
+        🎫Ticket Flow
+      </a>
+
+      <!-- NAV -->
+      <nav>
+
+        <ul>
+
+          <li>
+
+            <a
+              href="#"
+              class="nav-link"
+              data-target="buy"
+            >
+              Eventos
+            </a>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <!-- RIGHT ACTIONS -->
+      <div class="nav-actions">
+
+        <!-- DARK MODE -->
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+        >
+          🌙
+        </button>
+
+        <!-- LOGIN -->
+        <a
+          href="#"
+          id="loginShortcut"
+          class="nav-link auth-shortcut"
+          data-target="login"
+        >
+          Iniciar sesión
+        </a>
+
+        <!-- REGISTER -->
+        <a
+          href="#"
+          id="registerShortcut"
+          class="nav-link register-shortcut"
+          data-target="register"
+        >
+          Regístrate
+        </a>
+
+        <!-- PROFILE -->
+        <a
+          href="#"
+          id="profileShortcut"
+          class="profile-shortcut nav-link"
+          data-target="profile"
+          style="display:none;"
+        >
+
+          <div class="profile-avatar">
+            CM
+          </div>
+
+        </a>
+
+        <!-- CART -->
+        <a
+          href="#"
+          class="cart-link nav-link"
+          data-target="cart"
+        >
+
+          <span class="cart-icon">
+            🛒
+          </span>
+
+          <span
+            id="cartCount"
+            class="cart-count"
+          >
+            0
+          </span>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <!-- MAIN -->
+
+  <main>
+
+    <!-- HOME -->
+
+    <section
+      id="home"
+      class="active"
+    >
+
+      <div class="hero">
+
+        <h1>
+          Vive la experiencia Ticket Flow
+        </h1>
+
+        <p>
+          Compra entradas para conciertos, festivales y eventos exclusivos.
+        </p>
+
+        <button id="btnBuyNow">
+          Ver eventos
+        </button>
+
+      </div>
+
+      <div class="announcements">
+
+        <h2>
+          Anuncios
+        </h2>
+
+        <div class="announcement-item">
+          🎉 Preventa exclusiva disponible esta semana.
+        </div>
+
+        <div class="announcement-item">
+          ⚡ Nuevos eventos agregados diariamente.
+        </div>
+
+        <div class="announcement-item">
+          💳 Compra rápida y segura desde cualquier dispositivo.
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- BUY -->
+
+    <section
+      id="buy"
+      style="display:none;"
+    >
+
+      <div class="shop-header">
+
+        <div>
+
+          <h2>
+            🎟️ Explora Eventos
+          </h2>
+
+          <p>
+            Encuentra tu próximo evento favorito.
+          </p>
+
+        </div>
+
+        <div class="shop-actions">
+
+          <input
+            type="text"
+            placeholder="Buscar evento..."
+          >
+
+          <select>
+
+            <option>
+              Todas las categorías
+            </option>
+
+            <option>
+              Música
+            </option>
+
+            <option>
+              Teatro
+            </option>
+
+            <option>
+              Festival
+            </option>
+
+          </select>
+
+        </div>
+
+      </div>
+
+      <!-- EVENTS -->
+
+      <div 
+      id="eventsContainer"
+      class="events-grid">
+        
+      </div>
+
+    </section>
+
+    <!-- CART -->
+
+    <section
+      id="cart"
+      style="display:none;"
+    >
+
+      <div class="panel-container">
+
+        <h2>
+          🛒 Carrito de Compras
+        </h2>
+
+        <div
+          id="cartItems"
+          class="card-list"
+        >
+
+          <p class="empty-message">
+            Tu carrito está vacío.
+          </p>
+
+        </div>
+
+        <div class="cart-summary">
+
+          <h3>
+            Total:
+            <span id="cartTotal">
+              $0
+            </span>
+          </h3>
+
+          <button id="checkoutBtn">
+            Finalizar Compra
+          </button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- PROFILE -->
+
+    <section
+      id="profile"
+      style="display:none;"
+    >
+
+      <div class="panel-container">
+
+        <div class="profile-header">
+
+          <div class="profile-main">
+
+            <div class="profile-big-avatar">
+              CM
+            </div>
+
+            <div>
+
+              <h2 id="profileName">
+                Usuario
+              </h2>
+
+              <p id="profileEmail">
+                correo@email.com
+              </p>
+
+            </div>
+
+          </div>
+
+          <button
+            id="logoutBtn"
+            class="logout-btn"
+          >
+            Cerrar sesión
+          </button>
+
+        </div>
+
+        <div class="profile-grid">
+
+          <div class="profile-card">
+
+            <h3>
+              Información Personal
+            </h3>
+
+            <p>
+              <strong>Teléfono:</strong>
+              <span id="profilePhone">-</span>
+            </p>
+
+            <p>
+              <strong>País:</strong>
+              <span id="profileCountry">-</span>
+            </p>
+
+          </div>
+
+        </div>
+
+        <!-- TICKETS -->
+
+        <div class="profile-tickets-section"
+        >
+
+          <h2>🎟️ Mis Tickets</h2>
+
+          <div
+            id="ticketsContainer"
+            class="ticket-grid"
+          >
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- LOGIN -->
+
+    <section
+      id="login"
+      style="display:none;"
+    >
+
+      <form id="loginForm">
+
+        <h2>
+          Iniciar sesión
+        </h2>
+
+        <input
+          type="email"
+          id="loginEmail"
+          name="correo"
+          placeholder="Correo electrónico"
+          required
+        />
+
+        <input
+          type="password"
+          id="loginPassword"
+          name="contrasena"
+          placeholder="Contraseña"
+          required
+        />
+
+        <button type="submit">
+          Entrar
+        </button>
+
+      </form>
+
+    </section>
+
+    <!-- REGISTER -->
+
+    <section
+      id="register"
+      style="display:none;"
+    >
+
+      <form id="registerForm">
+
+        <h2>
+          Regístrate
+        </h2>
+ <!-- CORREO -->
+  <label for="regEmail">Correo electrónico</label>
+  <input 
+    type="email" 
+    id="regEmail" 
+    name="correo" 
+    placeholder="tu@email.com" 
+    required 
+  />
+
+  <!-- CONTRASEÑA -->
+  <label for="regPassword">Contraseña</label>
+  <input 
+    type="password" 
+    id="regPassword" 
+    name="contrasena" 
+    placeholder="Crear contraseña" 
+    required 
+  />
+
+  <!-- CONFIRMAR CONTRASEÑA -->
+  <label for="regPasswordConfirm">Confirmar contraseña</label>
+  <input 
+    type="password" 
+    id="regPasswordConfirm" 
+    name="contrasena_confirm" 
+    placeholder="Confirma tu contraseña" 
+    required 
+  />
+
+  <!-- NOMBRE -->
+  <label for="regName">Nombre</label>
+  <input 
+    type="text" 
+    id="regName" 
+    name="nombre" 
+    placeholder="Tu Nombre" 
+    required 
+  />
+
+  <!-- APELLIDO -->
+  <label for="regLastName">Apellido</label>
+  <input 
+    type="text" 
+    id="regLastName" 
+    name="apellido" 
+    placeholder="Tu Apellido" 
+    required 
+  />
+
+  <!-- TIPO DOCUMENTO -->
+  <label for="regDocumentType">Tipo de Documento</label>
+  <select id="regDocumentType" name="tipo_documento" required>
+    <option value="">Selecciona una opción</option>
+    <option value="cc">Cédula de Ciudadanía</option>
+    <option value="ce">Cédula de Extranjería</option>
+    <option value="pasaporte">Pasaporte</option>
+    <option value="ti">Tarjeta de Identidad</option>
+  </select>
+
+  <!-- NUMERO DOCUMENTO -->
+  <label for="regIdentityDocument">Número de Documento</label>
+  <input 
+    type="text" 
+    id="regIdentityDocument" 
+    name="numeroDeDocumento" 
+    placeholder="Tu número de documento" 
+    required 
+  />
+
+  <!-- FECHA -->
+  <label for="regBirthdate">Fecha de Nacimiento</label>
+  <input 
+    type="date" 
+    id="regBirthdate" 
+    name="fecha_nacimiento" 
+    required 
+  />
+
+  <!-- TELEFONO -->
+  <label for="regCellPhoneNumber">Número de Celular</label>
+  <input 
+    type="tel" 
+    id="regCellPhoneNumber" 
+    name="numero_celular" 
+    placeholder="+57 3001234567"
+    pattern="[0-9+\s]{7,15}"
+    required 
+  />
+
+  <!-- PAIS -->
+  <label for="regCountryResidence">País de Residencia</label>
+  <input 
+    type="text" 
+    id="regCountryResidence" 
+    name="pais_de_residencia" 
+    placeholder="Tu país" 
+    required 
+  />
+
+  <!-- GENERO -->
+  <label for="regGender">Género</label>
+  <select id="regGender" name="genero" required>
+    <option value="">Selecciona una opción</option>
+    <option value="MASCULINO">Masculino</option>
+    <option value="FEMENINO">Femenino</option>
+    <option value="OTRO">Otro</option>
+    <option value="NOAPLICA">Prefiero no decirlo</option>
+  </select>
+
+  
+
+        <button type="submit">
+          Crear cuenta
+        </button>
+
+      </form>
+
+    </section>
+
+  </main>
+
+  <!-- WHATSAPP -->
+
+  <a
+    href="#"
+    class="whatsapp-float"
+  >
+    💬
+  </a>
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Ticket Flow
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

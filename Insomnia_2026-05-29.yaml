@@ -1,0 +1,357 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: My first collection
+meta:
+  id: wrk_2224bfb3b06344eaa0a5f8681d99c84a
+  created: 1774330057438
+  modified: 1774330057438
+  description: ""
+collection:
+  - url: http://localhost:8080/login
+    name: "Iniciar Sesion "
+    meta:
+      id: req_87f6f982f4794e5b8856a5e5faab0682
+      created: 1774330057444
+      modified: 1778364086790
+      isPrivate: false
+      description: ""
+      sortKey: -1774330057444
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"email":"cars213@gmail.com",
+        	"contrasena":"1234"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/12.4.0
+        description: ""
+        disabled: false
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - name: Boletas
+    meta:
+      id: fld_f7ec5aebcaca4e38a810796ce7f49cd8
+      created: 1774330064857
+      modified: 1774330064857
+      sortKey: -1774330064857
+      description: ""
+    children:
+      - url: http://localhost:8080/boletas
+        name: Registrar boletos
+        meta:
+          id: req_21aada52724f49058d7d178c63b0d773
+          created: 1774362714448
+          modified: 1778378425728
+          isPrivate: false
+          description: ""
+          sortKey: -1774362714448
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"asiento":"400",
+            	"usuarioId":1,
+            	"tipoDeBoletaId":1
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgdGlja2V0ZmxvdyIsInN1YiI6ImNhcnMyMTNAZ21haWwuY29tIiwiaWQiOjEsImV4cCI6MTc3NzUxOTg3MH0.gZCVTtoXtG8gI6noXuNWZtanpbrI5doZRS94LxcSfdA
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/boletas/0331c991-9f59-41a6-b2be-3dbf96e81b01
+        name: Ver boletas
+        meta:
+          id: req_f795b6f69d11485b806143efb1c97ea3
+          created: 1774363108449
+          modified: 1778217815222
+          isPrivate: false
+          description: ""
+          sortKey: -1774363108449
+        method: PUT
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        authentication:
+          type: none
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/boletas
+        name: Ver boletas por usuario
+        meta:
+          id: req_94d78c6d1359404fabb20a655b8fff80
+          created: 1778364070553
+          modified: 1778373731650
+          isPrivate: false
+          description: ""
+          sortKey: -1774363108549
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          disabled: false
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgdGlja2V0ZmxvdyIsInN1YiI6ImNhcnMyMTNAZ21haWwuY29tIiwiaWQiOjEsImV4cCI6MTc3ODM4MDUwM30.qVTerF8NTVtrXjw3yCM-pw2oswrweET4LDM8CVwyKA4
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Usuarios
+    meta:
+      id: fld_a9672ad766094cafb9b1ac7a76a45ebf
+      created: 1774330070967
+      modified: 1774330070967
+      sortKey: -1774330070967
+      description: ""
+    children:
+      - url: http://localhost:8080/usuarios
+        name: Registrar usuario
+        meta:
+          id: req_2c91a33e101a44d9ac793d5d9d302f60
+          created: 1774361996213
+          modified: 1778373269763
+          isPrivate: false
+          description: ""
+          sortKey: -1774361996213
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email":"cars213@gmail.com",
+            	"contrasena":"1234",
+            	
+            	"nombre":"carlos",
+            	"apellido":"rendon",
+            	"cedula":"100564188151",
+            	"telefono":"15611551651",
+            	"fechaDeNacimiento":"2002-08-13",
+            	"genero":"Masculino",
+            	"paisDeResidencia":"Colombia"
+
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuarios
+        name: Ver usuario
+        meta:
+          id: req_ccbc3c7ea1af4849a231624da667c489
+          created: 1774816190047
+          modified: 1780064967235
+          isPrivate: false
+          description: ""
+          sortKey: -1774816190047
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          disabled: false
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgdGlja2V0ZmxvdyIsInN1YiI6ImNhcnMyMTNAZ21haWwuY29tIiwiaWQiOjEsImV4cCI6MTc4MDA3MjA2Nn0.bRg0EbQbS4UnRZmWG6qhdIe2zrFmaQ4HgK1lGexDD2M
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/eventos
+        name: Ver eventos
+        meta:
+          id: req_ea53ef77e9e74d5a960ce2271afddedc
+          created: 1778374287171
+          modified: 1778374338401
+          isPrivate: false
+          description: ""
+          sortKey: -1774589649298
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          disabled: true
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgdGlja2V0ZmxvdyIsInN1YiI6InJvYmVydG9AZ21haWwuY29tIiwiaWQiOjUsImV4cCI6MTc3ODM1ODc4MX0.bi8_pmfrdVnVecx-P-DtT8t37DprIfEEXZNtBuaNQaM
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Eventos
+    meta:
+      id: fld_c76906fdaa7443b89c5dbb95e5366d20
+      created: 1774330084629
+      modified: 1774362301644
+      sortKey: -1774330084629
+      description: ""
+    children:
+      - url: http://localhost:8080/eventos
+        name: Registrar eventos
+        meta:
+          id: req_26ea255f9c1c465aa993e2e42889dc87
+          created: 1774362370249
+          modified: 1780064900976
+          isPrivate: false
+          description: ""
+          sortKey: -1774362370249
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nombre":"Concierto de Roc",
+            	"ciudad":"bogota",
+            	"direccion":"Estadio Prueb",
+            	"categoria":"Musical",
+            	"frasePromocional":"Vive una noche epica con las mejores bandas.",
+            	"precio":1200000,
+            	"fechaInicialDelEvento":"2026-08-05T09:00",
+            	"fechaFinalDelEvento":"2026-08-15T09:00"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.4.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgdGlja2V0ZmxvdyIsInN1YiI6ImNhcnMyMTNAZ21haWwuY29tIiwiaWQiOjEsImV4cCI6MTc4MDA3MjA2Nn0.bRg0EbQbS4UnRZmWG6qhdIe2zrFmaQ4HgK1lGexDD2M
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Tipos Boletas
+    meta:
+      id: fld_1bff65e60f3e4d5789884bb13923c8b4
+      created: 1777435381133
+      modified: 1777435381133
+      sortKey: -1777435381133
+      description: ""
+    children:
+      - url: http://localhost:8080/boletas/categoria
+        name: Registrar categoria de boleta
+        meta:
+          id: req_b6981c22fe5242029332280716207b1a
+          created: 1777435385050
+          modified: 1778373649906
+          isPrivate: false
+          description: ""
+          sortKey: -1777435838299
+        method: POST
+        body:
+          mimeType: application/json
+          text: |+
+            {
+            	"perfil":"generico",
+            	"cantidad":1000,
+            	"costo":180000,
+            	"idEvento":"2"
+            }
+
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJBUEkgdGlja2V0ZmxvdyIsInN1YiI6ImNhcnMyMTNAZ21haWwuY29tIiwiaWQiOjEsImV4cCI6MTc3ODM4MDUwM30.qVTerF8NTVtrXjw3yCM-pw2oswrweET4LDM8CVwyKA4
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_d6f06149dfa073faf0546dc5613e41d10ed42180
+    created: 1774330057440
+    modified: 1777311193419
+  cookies:
+    - id: ab7625d2-4091-4008-968d-41a23d55b563
+      key: JSESSIONID
+      value: F3C94B131506711325FFB4461FAD2116
+      domain: localhost
+      path: /
+      secure: false
+      httpOnly: true
+      hostOnly: true
+environments:
+  name: Base Environment
+  meta:
+    id: env_d6f06149dfa073faf0546dc5613e41d10ed42180
+    created: 1774330057439
+    modified: 1774330057439
+    isPrivate: false
